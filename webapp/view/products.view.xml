@@ -1,0 +1,93 @@
+<mvc:View
+    controllerName="showshopping.controller.products"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+<Button
+id="addToCart"
+icon="sap-icon://cart"
+type="Transparent"
+text="{i18n>AddCart}"
+press=".onAddCart">
+</Button>
+<Button
+id="viewToCart"
+icon="sap-icon://cart"
+type="Transparent"
+text="{i18n>ViewCart}"
+press=".onViewCart">
+</Button>
+<Table items="{pro>/product/results}" id="idOrdersTable" mode="MultiSelect" >
+ 
+  <columns>
+        <Column>
+            <Text text="{i18n>Select}"/>
+        </Column>
+    </columns>
+
+    <columns>
+        <Column>
+            <Text text="{i18n>ProductID}"/>
+        </Column>
+    </columns>
+    <columns>
+        <Column>
+            <Text text="{i18n>ProductName}"/>
+        </Column>
+    </columns>
+    <columns>
+        <Column>
+            <Text text="{i18n>QuantityPerUnit}"/>
+        </Column>
+    </columns>
+    <columns>
+        <Column>
+            <Text text="{i18n>ReorderLevel}"/>
+        </Column>
+    </columns>
+    <columns>
+        <Column>
+            <Text text="{i18n>SupplierID}"/>
+        </Column>
+    </columns>
+    <columns>
+        <Column>
+            <Text text="{i18n>UnitPrice}"/>
+        </Column>
+    </columns>
+    <columns>
+        <Column>
+            <Text text="{i18n>UnitsInStock}"/>
+        </Column>
+    </columns>
+   
+<items>
+
+    <ColumnListItem>
+        <cells>  
+           <Text/>
+
+            <Text text="{pro>ProductID}"/>
+            <Text text="{pro>ProductName}"/>
+            <Text text="{pro>QuantityPerUnit}"/>
+            <Text  text="{pro>ReorderLevel}"/>
+            <Text text="{pro>SupplierID}"/>
+            <Text text="{pro>UnitPrice}"/>
+            <Text text="{pro>UnitsInStock}"/>
+          
+            
+           
+        
+        </cells>    
+              
+    </ColumnListItem>
+</items>    
+    
+  </Table>
+            
+            
+</mvc:View>
+
+

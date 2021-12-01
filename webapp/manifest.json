@@ -1,0 +1,148 @@
+{
+  "_version": "1.32.0",
+  "sap.app": {
+    "id": "showshopping",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "dataSources": {
+      "invoiceRemote": {
+      "uri": "http://localhost:8080/http://services.odata.org/Northwind/Northwind.svc",
+      "type": "OData",
+      "settings": {
+        "odataVersion": "2.0"
+      }
+      }
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "ach": "ach"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://task",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "flexEnabled": false,
+    "rootView": {
+      "viewName": "showshopping.view.app",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+			"minUI5Version": "1.96.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "showshopping.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "showshopping.view",
+        "controlAggregation": "pages",
+        "controlId": "splitapp",
+        "clearControlAggregation": false
+      },
+     
+      "routes": [{
+        "pattern": "",
+        "name": "master",
+        "target":  "master"
+      }, {
+        "pattern": "categoriesDetailView",
+        "name": "detail",
+        "target":  "detail"
+      }, {
+        "pattern": "cateNestedDetail:?value:",
+        "name": "cateNestedDetail",
+        "target":  "cateNestedDetail"
+      }, {
+        "pattern": "products:?value:",
+        "name": "products",
+        "target":  "products"
+      }, {
+        "pattern": "addCart:",
+        "name": "addCart",
+        "target":  "addCart"
+      }, {
+        "pattern": "shippers:",
+        "name": "shippers",
+        "target":  "shippers"
+      }
+      ],
+      "targets": {
+        "master": {
+          "viewType": "XML",
+          "viewName": "master",
+          "controlAggregation": "masterPages"
+      },
+      "detail": {
+        "viewType": "XML",
+        "viewName": "detail",
+        "controlAggregation": "detailPages"
+    },
+    "cateNestedDetail": {
+      "viewType": "XML",
+      "viewName": "cateNestedDetail",
+      "controlAggregation": "detailPages"
+  },
+  "products": {
+    "viewType": "XML",
+    "viewName": "products",
+    "controlAggregation": "detailPages"
+},
+"addCart": {
+  "viewType": "XML",
+  "viewName": "addCart",
+  "controlAggregation": "detailPages"
+},
+"shippers": {
+  "viewType": "XML",
+  "viewName": "shippers",
+  "controlAggregation": "detailPages"
+}
+      }
+    }
+  }
+}

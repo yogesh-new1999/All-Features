@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="showshopping.controller.shippers"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+<Table items="{shi>/ship/results}" id="texx">
+        <columns>
+            <Column>
+                <Text text = "{i18n>CompanyName}"/>
+            </Column>
+            <Column>
+                <Text text = "{i18n>Phone}"/>
+            </Column>
+            <Column>
+                <Text text = "{i18n>ShipperID}"/>
+            </Column>
+             <Column>
+                <Text text = "{i18n>Button}"/>
+            </Column>
+         
+
+        </columns>
+        <items>
+        <ColumnListItem>
+           <cells>  
+            
+            <Text  text="{shi>CompanyName}"/>
+            <Text text="{shi>Phone}"/>
+            <Text  text="{shi>ShipperID}"/>  
+            <Button text="Click" type="Accept" press=".onClick">
+            </Button>
+        </cells>    
+              
+    </ColumnListItem>
+        </items>
+    </Table>
+    <Button class="evalPriceButton" id="IDCustomerListItem" text="{i18n>TableColor}" icon="sap-icon://sales-order" type="Accept" press="onPricePress" />
+    
+</mvc:View>

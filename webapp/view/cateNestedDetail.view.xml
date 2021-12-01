@@ -1,0 +1,78 @@
+<mvc:View
+    controllerName="showshopping.controller.cateNestedDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+	xmlns:u="sap.ui.unified"
+>
+<App>
+	<pages>
+		<Page
+		id="page"
+		backgroundDesign="Solid"
+		showNavButton="true"
+		navButtonPress=".onBack">
+
+			<FlexBox wrap="Wrap" >
+				<VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+                		<TileContent>
+                         
+                                <NumericContent  id="idNestedDetai" valueColor="Good"  withMargin="false"/>
+                            
+                        </TileContent> 
+                   
+                    </GenericTile>
+				 </VBox>
+				<VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop"   >
+                   		<TileContent>
+                         
+                                <NumericContent press=".onClick" valueColor="Error"	icon="sap-icon://action" id="idNestedDeta"/>
+						</TileContent> 
+                   
+                	</GenericTile>
+				</VBox>
+				<VBox>
+					<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+				<GenericTile backgroundImage="asset/iconn/three.png" frameType="TwoByOne" state="Loaded" press="press">
+				</GenericTile>
+		
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+				backgroundImage="asset/iconn/threeone.png"
+				frameType="TwoByOne">
+			
+				</GenericTile>
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+				backgroundImage="asset/iconn/threeonetwo.png"
+				frameType="TwoByOne">
+				</GenericTile>
+		</SlideTile>
+		</VBox>
+				
+				
+		
+			</FlexBox>
+		
+				
+			<HBox>
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop  tileLayout"
+				backgroundImage="asset/iconn/one.jpg"
+				frameType="OneByOne">
+			
+				</GenericTile>
+				</HBox>
+				
+				<HBox>
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop  tileLayout"
+				backgroundImage="asset/iconn/two.jpg"
+				frameType="OneByOne">
+			
+				</GenericTile>
+				</HBox>
+				
+		</Page>
+	</pages>
+</App>
+	
+</mvc:View>

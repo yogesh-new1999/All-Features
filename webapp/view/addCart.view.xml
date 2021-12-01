@@ -1,0 +1,76 @@
+<mvc:View
+    controllerName="showshopping.controller.addCart"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+<Page
+		id="page"
+		backgroundDesign="Solid"
+		showNavButton="true"
+		navButtonPress=".onBack">
+
+<Button
+id="addToCart"
+icon="sap-icon://delete"
+type="Reject"
+press=".ondelete" >
+
+</Button>
+
+    
+
+<Table items="{/carts}" id="idAddcartTable" mode="MultiSelect">
+<columns>
+        <Column>
+            <Text text="{i18n>productname}"/>
+        </Column>
+    </columns>
+    <columns>
+        <Column>
+            <Text text="{i18n>unitprice}"/>
+        </Column>
+    </columns>
+      <columns>
+        <Column>
+            <Text text="{i18n>unitstock}"/>
+        </Column>   
+    </columns>
+   
+    <columns>
+        <Column>
+            <Text text=""/>
+        </Column>
+    </columns>
+    
+    <items>
+        
+        <ColumnListItem>
+            <cells>
+                <Text  text="{productname}"/>
+                <Text id="unitPrize"  text="{
+                    path: 'unitprice',
+                    formatter : '.myNum'
+                    }"/>   
+                <Text text="{unitstock}"/>
+               
+                <Text id="totalValue" text="{
+                    parts: [{path : 'unitstock'},{path : 'unitprice'}],
+                   formatter : '.myFormatter'
+                    }" />
+
+
+            
+                
+            </cells>
+                 
+        </ColumnListItem>
+        
+    </items>
+</Table>
+
+<Label text="{i18n>totalValue}:"  width="100%" class="sapUiContentPadding"></Label>
+<TextArea id="tot"/>
+
+</Page>
+</mvc:View>

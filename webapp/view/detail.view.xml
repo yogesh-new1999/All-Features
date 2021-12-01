@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName="showshopping.controller.detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+<Page>
+    <Label id="tableHeader" text="{i18n>SearchFiled}"/>        
+    <SearchField id="searchField" width="auto" search=".onFilterPosts"  /> 
+    <Table items="{cat>/categories/results}"  id="idCategoriesTable">
+               
+    <columns>
+        <Column>
+            <Text text="{i18n>CategoryID}"/>
+        </Column>
+    </columns>
+    <columns>
+        <Column>
+            <Text text="{i18n>CategoryName}"/>
+        </Column>
+    </columns>
+    <columns>
+        <Column>
+            <Text text="{i18n>Description}"/>
+        </Column>
+    </columns>
+    
+<items>
+
+    <ColumnListItem press="onDetailPress" type="Navigation" id="detaiId">
+        <cells>  
+     <!-- <Button  type="Reject" icon="sap-icon://delete" press="ondeletepress" /> -->
+             <Text id="y" text="{path : 'cat>CategoryID'}"/>   
+            
+                <Text text="{cat>CategoryName}"/>
+                 <Text text="{cat>Description}"/>
+      
+        
+        </cells>    
+              
+    </ColumnListItem>
+</items>    
+    
+  </Table>
+  </Page>
+            
+</mvc:View>
